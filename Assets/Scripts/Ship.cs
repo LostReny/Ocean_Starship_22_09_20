@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ship : MonoBehaviour
+public class Ship : GameEntity
 {
     public float speed = 5;
     // Start is called before the first frame update
@@ -22,4 +22,10 @@ public class Ship : MonoBehaviour
         position.y += y * Time.deltaTime * speed;
         transform.position = position;
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+    }
+
 }
