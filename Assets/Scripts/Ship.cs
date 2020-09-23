@@ -23,9 +23,4 @@ public class Ship : GameEntity
         transform.position = position;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Destroy(gameObject);
-    }
-
 }
