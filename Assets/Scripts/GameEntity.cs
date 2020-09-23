@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameEntity : MonoBehaviour
 {
-
+    
     public GameObject explosion;
 
     // Start is called before the first frame update
@@ -20,8 +20,8 @@ public class GameEntity : MonoBehaviour
     }
 
     
-    void OnTriggerEnter2D(Collider2D collision)
-    {
+   protected virtual void OnTriggerEnter2D(Collider2D collision)
+  {
         GameObject obj = Instantiate
                         (explosion, transform.position, transform.rotation);
 
