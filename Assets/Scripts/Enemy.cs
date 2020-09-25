@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Enemy : GameEntity
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int points = 100;
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.GetComponent<Enemy>()) return;
+        if (collision.GetComponent<Ship>()) return;
+        base.OnTriggerEnter2D(collision);
+
+        GameControler.instance.Score(points);
     }
 }
+

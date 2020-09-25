@@ -44,6 +44,8 @@ public class Ship : GameEntity
         {
          if (!collision.GetComponent<Enemy>()) return;
          base.OnTriggerEnter2D(collision);
+         GameControler.instance.GameOver();
+
          }
 
 }
